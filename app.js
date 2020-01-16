@@ -1,19 +1,18 @@
-const express = require('express');
+//Load HTTP module
+const http = require("http");
+const hostname = '127.0.0.1';
+const port = 3000;
 
-const app = express();
-const nodemailer = require('nodemailer')
+//Create HTTP server and listen on port 3000 for requests
+const server = http.createServer((req, res) => {
 
-// serve files from the public directory
-
-// start the express web server listening on 8080
-app.listen(8080, () => {
-  console.log('listening on 8080');
+  //Set the response HTTP header with HTTP status and Content type
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
 });
 
-// serve the homepage
-app.get('/', (req, res) => {
-	// console.log("ho")
-  res.sendFile(__dirname + '/index.html');
-  // var domain = req.headers.host
-	// console.log(domain)
+//listen for request on port 3000, and as a callback function have the port listened on logged
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
