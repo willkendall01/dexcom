@@ -5,8 +5,8 @@ const app = express();
 app.use(express.static('public'));
 
 // start the express web server listening on 8080
-app.listen(8080, () => {
-  console.log('listening on 8080');
+app.listen(process.env.PORT || 8080, () => {
+  console.log('listening');
 });
 
 // serve the homepage
