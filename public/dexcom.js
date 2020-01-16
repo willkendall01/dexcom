@@ -53,12 +53,15 @@ function get_bg_val(token){
       }
     });
 
-    var d_options = { month: "2-digit", day: "2-digit"}; 
+    var month_opt = {month: "2-digit"}; 
+	var day_opt = {day: "2-digit"}; 
+	var year_opt = {year: "numeric"}; 
     var t_options = { hour12: false }; 
 
 
-    var s_date = start_time.toLocaleDateString("en-us", d_options);
-    var e_date = end_time.toLocaleDateString("en-us", d_options)
+    var s_date = start_time.toLocaleDateString("en-us", year_opt) + "-" + start_time.toLocaleDateString("en-us", month_opt) + "-" +start_time.toLocaleDateString("en-us", day_opt);
+    
+    var e_date = end_time.toLocaleDateString("en-us", year_opt) + "-" + end_time.toLocaleDateString("en-us", month_opt) + "-" +end_time.toLocaleDateString("en-us", day_opt);
      
     var s_time = start_time.toLocaleTimeString("en-us", t_options);
     var e_time = end_time.toLocaleTimeString("en-us", t_options)
