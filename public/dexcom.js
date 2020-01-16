@@ -31,7 +31,12 @@ function get_bg_val(token){
 	console.log(token);
 
     var data = null;
-    
+    var date_init = new Date();
+    var time = date_init.getTime()
+    var start_time = new Date(time - 11100000);
+    var end_time = new Date(time - 10800000);
+
+
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
     
@@ -44,8 +49,29 @@ function get_bg_val(token){
       }
     });
 
-	//  document.getElementById("date").innerHTML = date_time[0] + "/" + date_time[1] + "/" + date_time[2]
-	//  document.getElementById("time").innerHTML = date_time[3] + ":" + date_time[4] + ":" + date_time[5]
+
+    //     var date = new Date();
+//     var day = date.getDate();
+//     var month = date.getMonth() + 1;
+//     var year = date.getFullYear();
+    
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var seconds = date.getSeconds();
+
+
+
+    var s_date = start_time.getFullYear() + "/" + (start_time.getMonth() + 1) + "/" + start_time.getDate();
+    var s_time = start_time.getHours() + ":" + start_time.getMinutes() + ":" + start_time.getSeconds()
+	 document.getElementById("s_date").innerHTML = s_date
+
+	 document.getElementById("s_time").innerHTML = s_time
+
+	var e_date = end_time.getFullYear() + "/" + (end_time.getMonth() + 1) + "/" + end_time.getDate();
+    var e_time = end_time.getHours() + ":" + end_time.getMinutes() + ":" + end_time.getSeconds()
+	 document.getElementById("e_date").innerHTML = e_date
+
+	 document.getElementById("e_time").innerHTML = e_time
 
 
 	//  //Request data point (right now linked to sandbox times)
@@ -79,3 +105,23 @@ function get_bg_val(token){
     xhr.setRequestHeader("authorization", "Bearer " + token);
     xhr.send(data);
 }	
+
+// function curr_date() {
+//     var date = new Date();
+//     var day = date.getDate();
+//     var month = date.getMonth() + 1;
+//     var year = date.getFullYear();
+    
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var seconds = date.getSeconds();
+
+// 	if (minutes < 10) {
+// 	    minutes = "0" + minutes;
+//     }
+
+
+	
+// 	return [day, month, year, hours, minutes, seconds];
+    
+// }
