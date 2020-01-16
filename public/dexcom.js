@@ -15,9 +15,9 @@ xhr.withCredentials = false;
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
-     var token = this.response;
+     var token = JSON.parse(this.responseText);
      console.log(token);
-     token = token.get("access_token");
+     token = token.access_token;
      get_bg_val(token)
   }
 });
