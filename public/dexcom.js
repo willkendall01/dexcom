@@ -74,8 +74,8 @@ function get_bg_val(token){
 
 	//  //eventual method to retrieve data points. (right now just printing to ensure correctness)
 	// document.getElementById("elem_to_get").innerHTML = "https://cors-anywhere.herokuapp.com/https://sandbox-api.dexcom.com/v2/users/self/egvs?startDate=2018-03-15" + "T" + start_hour + ":" + start_minute + ":00&endDate=2018-03-15" + "T" + date_time[3] + ":" + date_time[4] + ":00";
-   xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/users/self/egvs?startDate=2017-06-16T15:30:00&endDate=2017-06-16T15:45:00");
+   xhr.open("GET", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/users/self/egvs?startDate=2020-01-16T10:30:00&endDate=2019-01-16T10:40:00");
 
     xhr.setRequestHeader("authorization", "Bearer " + token);
     xhr.send(data);
-}
+}	
