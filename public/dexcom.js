@@ -19,7 +19,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("POST", "https://api.dexcom.com/v2/oauth2/token");
+xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/oauth2/token");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 
