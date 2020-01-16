@@ -1,4 +1,4 @@
-function get_data() {
+https://github.com/willkendall01/dexcom/projectsfunction get_data() {
 	var curr_url = window.location.href;
 	var parsed_url = new URL(curr_url);
 	var url_data = parsed_url.searchParams;
@@ -15,7 +15,7 @@ xhr.withCredentials = false;
 
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
-     var token = this.responseJSON.access_token;
+     var token = this.response.access_token;
      get_bg_val(token)
   }
 });
