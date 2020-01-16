@@ -1,6 +1,3 @@
-
-var url = require('url');
-
 function get_data() {
 	var curr_url = window.location.href;
 	var parsed_url = new URL(curr_url);
