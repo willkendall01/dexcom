@@ -1,4 +1,4 @@
-https://github.com/willkendall01/dexcom/projectsfunction get_data() {
+get_data() {
 	var curr_url = window.location.href;
 	var parsed_url = new URL(curr_url);
 	var url_data = parsed_url.searchParams;
