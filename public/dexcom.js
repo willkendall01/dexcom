@@ -60,8 +60,8 @@ function get_bg_val(token){
     var s_date = start_time.toLocaleDateString("en-us", d_options);
     var e_date = end_time.toLocaleDateString("en-us", d_options)
      
-    var s_time = start_time.toLocalTimeString("en-us", t_options);
-    var e_time = end_time.toLocalTimeString("en-us", t_options)
+    var s_time = start_time.toLocaleTimeString("en-us", t_options);
+    var e_time = end_time.toLocaleTimeString("en-us", t_options)
 	 document.getElementById("s_date").innerHTML = s_date
 
 	 document.getElementById("s_time").innerHTML = s_time
