@@ -31,7 +31,6 @@ function get_bg_val(token){
 	console.log(token);
 
     var data = null;
-    var date_time = curr_date()
     
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
@@ -40,7 +39,7 @@ function get_bg_val(token){
       if (this.readyState === 4) {
         console.log(this.responseText);
             // var xmlDoc = xhr.responseXML;
-            // readyXML(this.responseText);
+            // readygit XML(this.responseText);
             
       }
     });
