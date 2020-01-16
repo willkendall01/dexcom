@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 app.get('/welcome', (req, res) => {
 	// console.log("ho")
-  res.sendFile(__dirname + '/welcome.html');
+  res.sendFile(__dirname + '/public/welcome.html');
   // var domain = req.headers.host
 	// console.log(domain)
 });
