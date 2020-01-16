@@ -3,12 +3,11 @@ var url = require('url');
 
 function get_data() {
 	var curr_url = window.location.href;
-	var parsed_url = url.parse(curr_url, true);
-	var url_data = parsed_url.query;
-	var auth_code = url_data.code;
+	var parsed_url = new URL(curr_url);
+	var url_data = parsed_url.searchParams;
+	var auth_code = url_data.get('code');
 	console.log("Auth Code: "+ auth_code);
 	return "client_secret=Bu0MHYZ5OmMhFwl4&client_id=iPzOFA8R15l4KjimEB3oHh5XTD7fKoMB&code=" + auth_code + "&grant_type=authorization_code&redirect_uri=https://dry-earth-08919.herokuapp.com/welcome";
-
 }
 var data = get_data()
 
