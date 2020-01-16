@@ -53,15 +53,20 @@ function get_bg_val(token){
       }
     });
 
+    var d_options = { month: "2-digit", day: "2-digit"}; 
+    var t_options = { hour12: false }; 
 
-    var s_date = start_time.getFullYear() + "-" + (start_time.getMonth() + 1) + "-" + start_time.getDate();
-    var s_time = start_time.getHours() + ":" + start_time.getMinutes() + ":" + start_time.getSeconds()
+
+    var s_date = start_time.toLocaleDateString("en-us", d_options);
+    var e_date = end_time.toLocaleDateString("en-us", d_options)
+     
+    var s_time = start_time.toLocalTimeString("en-us", t_options);
+    var e_time = end_time.toLocalTimeString("en-us", t_options)
 	 document.getElementById("s_date").innerHTML = s_date
 
 	 document.getElementById("s_time").innerHTML = s_time
 
-	var e_date = end_time.getFullYear() + "-" + (end_time.getMonth() + 1) + "-" + end_time.getDate();
-    var e_time = end_time.getHours() + ":" + end_time.getMinutes() + ":" + end_time.getSeconds()
+    
 	 document.getElementById("e_date").innerHTML = e_date
 
 	 document.getElementById("e_time").innerHTML = e_time
