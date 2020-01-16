@@ -1,5 +1,5 @@
 {
-  "name": "dexcom display",
+  "name": "dexcom_display",
   "version": "1.0.0",
   "description": "blood glucose display",
   "main": "app.js",
@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/willkendall01/dexcom#readme",
   "dependencies": {
-
+    "express": "^4.17.1"
   }
 }
