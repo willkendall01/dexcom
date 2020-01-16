@@ -1,5 +1,7 @@
+var req_data = get_data();
 request_token();
 setInterval(request_token, 15000);
+
 function get_data() {
 	var curr_url = window.location.href;
 	var parsed_url = new URL(curr_url);
@@ -12,7 +14,7 @@ function get_data() {
 
 
 function request_token(){
-var data = get_data()
+
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = false;
 
@@ -28,7 +30,7 @@ xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 
-xhr.send(data);
+xhr.send(req_data);
 }
 
 function get_bg_val(token){
