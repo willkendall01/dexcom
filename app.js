@@ -16,3 +16,11 @@ app.get('/', (req, res) => {
   // var domain = req.headers.host
 	// console.log(domain)
 });
+
+
+app.get('/welcome', (req, res) => {
+	// console.log("ho")
+  res.sendFile(__dirname + '/welcome.html');
+  // var domain = req.headers.host
+	// console.log(domain)
+});
