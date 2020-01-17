@@ -75,7 +75,7 @@ function get_bg_val(token){
 //     var start_time = new Date(time - 21100000);
 //     var end_time = new Date(time - 10800000);
     var start_time = new Date(time);
-    var end_time = new Date(time+ 300001);
+    var end_time = new Date(time+ 10800000);
 
 
     var xhr = new XMLHttpRequest();
