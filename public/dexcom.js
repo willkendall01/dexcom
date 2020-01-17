@@ -70,7 +70,7 @@ function get_bg_val(token){
     var data = null;
     var date_init = new Date();
     var time = date_init.getTime()
-    var start_time = new Date(time - 11100000);
+    var start_time = new Date(time - 21100000);
     var end_time = new Date(time - 10800000);
 
 
