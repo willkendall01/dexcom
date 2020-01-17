@@ -74,7 +74,9 @@ function get_bg_val(token){
     var date_init = new Date();
     var time = date_init.getTime()
     var start_time = new Date(time + 6000000);
-    var end_time = new Date(time+ 6300000);
+
+    var end_time = new Date(time+ 6600000);
+
      window.time_int = 2 * window.time_int;
 
 
@@ -84,12 +86,17 @@ function get_bg_val(token){
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === 4) {
         console.log(this.responseText);
+        var resp = JSON.parse(this.responseText);
             // var xmlDoc = xhr.responseXML;
             // readygit XML(this.responseText);
+            var egvs = resp.egvs;
+            var bg = egvs[0].value;
+            document.getElementById("bg") = bg;
             
       }
     });
 
+   
     var month_opt = {month: "2-digit"}; 
 	var day_opt = {day: "2-digit"}; 
 	var year_opt = {year: "numeric"}; 
