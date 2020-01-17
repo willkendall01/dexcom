@@ -24,6 +24,7 @@ function request_token_init(){
 	     console.log(resp);
 	     var token = resp.access_token;
 	     window.refresh_token = resp.refresh_token;
+	     console.log("Init ref: " + window.refresh_token);
 	     get_bg_val(token)
 	  }
 	});
@@ -36,6 +37,7 @@ function request_token_init(){
 }
 
 function request_token_ref(){
+	console.log("In req: " + window.refresh_token);
 
 	var ref_data = "client_secret=Bu0MHYZ5OmMhFwl4&client_id=iPzOFA8R15l4KjimEB3oHh5XTD7fKoMB&refresh_token="
 				 + window.refresh_token
