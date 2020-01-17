@@ -91,7 +91,7 @@ function get_bg_val(token){
             // readygit XML(this.responseText);
             var egvs = resp.egvs;
             var bg = egvs[0].value;
-            document.getElementById("bg") = bg;
+            document.getElementById("bg").innerHTML = bg;
             
       }
     });
