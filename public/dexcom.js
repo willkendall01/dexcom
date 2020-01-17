@@ -1,6 +1,6 @@
 var req_data = get_data();
-request_token();
-setInterval(request_token, 15000);
+var refresh_token = "";
+setInterval(request_token_ref, 15000);
 
 function get_data() {
 	var curr_url = window.location.href;
@@ -13,26 +13,55 @@ function get_data() {
 
 
 
-function request_token(){
+function request_token_init(){
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = false;
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = false;
 
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-     var token = JSON.parse(this.responseText);
-     console.log(token);
-     token = token.access_token;
-     get_bg_val(token)
-  }
-});
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+	     var resp = JSON.parse(this.responseText);
+	     console.log(resp);
+	     var token = resp.access_token;
+	     window.refresh_token = resp.refresh_token;
+	     get_bg_val(token)
+	  }
+	});
 
-xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/oauth2/token");
-xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("cache-control", "no-cache");
+	xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/oauth2/token");
+	xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+	xhr.setRequestHeader("cache-control", "no-cache");
 
-xhr.send(req_data);
+	xhr.send(req_data);
 }
+
+function request_token_ref(){
+
+	var ref_data = "client_secret=Bu0MHYZ5OmMhFwl4&client_id=iPzOFA8R15l4KjimEB3oHh5XTD7fKoMB&refresh_token="
+				 + window.refresh_token
+				 + "&grant_type=refresh_token&redirect_uri=https://dry-earth-08919.herokuapp.com/welcome";
+
+	var xhr = new XMLHttpRequest();
+	xhr.withCredentials = false;
+
+	xhr.addEventListener("readystatechange", function () {
+	  if (this.readyState === 4) {
+		     var resp = JSON.parse(this.responseText);
+		     console.log(resp);
+		     var token = resp.access_token;
+		     window.refresh_token = resp.refresh_token;
+		     get_bg_val(token)
+	  }
+	});
+
+	xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://api.dexcom.com/v2/oauth2/token");
+	xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+	xhr.setRequestHeader("cache-control", "no-cache");
+
+	xhr.send(ref_data);
+}
+
+
 
 function get_bg_val(token){
 	console.log(token);
