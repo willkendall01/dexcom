@@ -1,5 +1,6 @@
 var req_data = get_data();
 var refresh_token = "";
+request_token_init();
 setInterval(request_token_ref, 15000);
 
 function get_data() {
