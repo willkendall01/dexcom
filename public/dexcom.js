@@ -2,6 +2,7 @@ var req_data = get_data();
 var refresh_token = "";
 request_token_init();
 setInterval(request_token_ref, 15000);
+var time_int = 1000000;
 
 function get_data() {
 	var curr_url = window.location.href;
@@ -74,8 +75,9 @@ function get_bg_val(token){
     var time = date_init.getTime()
 //     var start_time = new Date(time - 21100000);
 //     var end_time = new Date(time - 10800000);
-    var start_time = new Date(time + 5900000);
-    var end_time = new Date(time+ 10200000);
+    var start_time = new Date(time);
+    var end_time = new Date(time+ 10200000 + window.time_int);
+     window.time_int = 2 * window.time_int;
 
 
     var xhr = new XMLHttpRequest();
