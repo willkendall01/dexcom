@@ -1,0 +1,45 @@
+html {
+	background-color: #F45B69;
+}
+
+a {
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+	
+
+}
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+}
+
+
+#bg {
+	font-family: 'Roboto', sans-serif;
+	color: #EBEBEB;
+	font-size: 20vw;
+	margin-top: 50px;
+}
+
+.sign_in {
+	display: block;
+    width: 120%;
+    background: #EFEFEF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color:  #F45B69;
+    font-weight: bold;
+}
+
+.intro {
+
+		font-family: 'Roboto', sans-serif;
+		color: #EFEFEF;
+		font-size: 10vw;
+		margin: 50px;
+}

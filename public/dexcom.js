@@ -73,9 +73,9 @@ function get_bg_val(token){
     var data = null;
     var date_init = new Date();
     var time = date_init.getTime()
-    var start_time = new Date(time + 6000000);
+    var start_time = new Date(time + 6600000);
 
-    var end_time = new Date(time+ 6600000);
+    var end_time = new Date(time+ 6900000);
 
      window.time_int = 2 * window.time_int;
 
@@ -109,14 +109,14 @@ function get_bg_val(token){
      
     var s_time = start_time.toLocaleTimeString("en-us", t_options);
     var e_time = end_time.toLocaleTimeString("en-us", t_options)
-	 document.getElementById("s_date").innerHTML = s_date
+	 // document.getElementById("s_date").innerHTML = s_date
 
-	 document.getElementById("s_time").innerHTML = s_time
+	 // document.getElementById("s_time").innerHTML = s_time
 
     
-	 document.getElementById("e_date").innerHTML = e_date
+	 // document.getElementById("e_date").innerHTML = e_date
 
-	 document.getElementById("e_time").innerHTML = e_time
+	 // document.getElementById("e_time").innerHTML = e_time
 
 
 	
